@@ -14,8 +14,17 @@
 </head>
 <body>
 <div id='ruffle' class="gameloc"></div>
+<script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("container");
+        container.appendChild(player);
+        player.ruffle().load("0000_Layer_1.swf");
+    });
+</script>
 <script src="ruffle/ruffle.js"></script>
-<script id = "gabe">swfobject.embedSWF("0000_Layer_1.swf", 'ruffle', 800, 600);</script>
 </body>
 </html>
 
